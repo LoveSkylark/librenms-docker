@@ -49,7 +49,6 @@ DB_USER=${DB_USER:-librenms}
 DB_TIMEOUT=${DB_TIMEOUT:-30}
 
 LIBRENMS_BASE_URL=${LIBRENMS_BASE_URL:-/}
-APP_TRUSTED_PROXIES=${APP_TRUSTED_PROXIES}
 
 # Timezone
 echo "Setting timezone to ${TZ}..."
@@ -140,9 +139,6 @@ DB_DATABASE=${DB_NAME}
 DB_USERNAME=${DB_USER}
 DB_PASSWORD="${DB_PASSWORD}"
 EOL
-if [ -n "${APP_TRUSTED_PROXIES}" ]; then
-  echo "APP_TRUSTED_PROXIES=${APP_TRUSTED_PROXIES}" >>${LIBRENMS_PATH}/.env
-fi
 
 # Config : Directories
 cat >${LIBRENMS_PATH}/database/seeders/config/directories.yaml <<EOL
